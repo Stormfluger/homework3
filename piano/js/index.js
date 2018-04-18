@@ -33,10 +33,16 @@ function playPiano(event) {
 
     if (event.shiftKey) {
         sound.src = soundsAlbum.lower[index];
+        piano.classList.add('lower');
+        piano.classList.remove('middle', 'higher');
     } else if (event.altKey) {
         sound.src = soundsAlbum.higher[index];
+        piano.classList.add('higher');
+        piano.classList.remove('middle', 'lower');
     } else {
         sound.src = soundsAlbum.middle[index];
+        piano.classList.add('middle');
+        piano.classList.remove('higher', 'lower');
     }
     sound.play();
 }
